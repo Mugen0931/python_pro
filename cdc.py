@@ -12,8 +12,8 @@ async def on_ready():
     print(f'La maquina {bot.user.name} está en línea!')
 
 @bot.command()
-async def kodland(ctx):
-    await ctx.send('Hola, quieres algun dato de la contaminacion?, eligen entre ambiental, suelo o agua.')
+async def saludo(ctx):
+    await ctx.send('Holaaa, como estas? yo bien, quieres algun dato de la contaminacion? si quieres saber como funciono, intenta escribiendo !ayuda')
 
 @bot.command()
 async def dato(ctx,*, mensaje:str):
@@ -36,6 +36,21 @@ async def dato(ctx,*, mensaje:str):
         
         await ctx.send('que?')
 
+@bot.command()
+async def despedida(ctx):
+    await ctx.send('Adios, que te vaya bien! vuelve pronto! :(')
+
+
+@bot.command()
+async def ayuda(ctx):
+    mensaje = (
+        "Hola, soy un bot de Discord. Aquí tienes algunos comandos que puedes usar:\n"
+        "!Hola - Te saludo y te pregunto sobre la contaminacion.\n"
+        "!dato <mensaje> - Te doy un dato sobre la contaminacion dependiendo del mensaje que me envíes, de agua, ambiental o del suelo.\n"
+        "!ayuda - Te muestro este mensaje de ayuda. :)\n"
+        "!Despedida - Te digo adiós... :(\n"
+    )
+    await ctx.send(mensaje)
 
 
 
